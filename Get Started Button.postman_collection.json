@@ -1,0 +1,95 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Get Started Button",
+		"_postman_id": "8686cc0b-dd07-6cfa-5d1c-9d0c5bdb2f1d",
+		"description": "Two calls, POST to set the Get Started button and GET to read it",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Read Get Started Button",
+			"request": {
+				"url": {
+					"raw": "https://graph.facebook.com/v2.6/me/messenger_profile?fields=get_started&access_token=YOUR_PAGE_ACCESS_TOKEN",
+					"protocol": "https",
+					"host": [
+						"graph",
+						"facebook",
+						"com"
+					],
+					"path": [
+						"v2.6",
+						"me",
+						"messenger_profile"
+					],
+					"query": [
+						{
+							"key": "fields",
+							"value": "get_started",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "access_token",
+							"value": "YOUR_PAGE_ACCESS_TOKEN",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": "Read the Get Started button"
+			},
+			"response": []
+		},
+		{
+			"name": "Set Get Started Button",
+			"request": {
+				"url": {
+					"raw": "https://graph.facebook.com/v2.6/me/messenger_profile?access_token=YOUR_PAGE_ACCESS_TOKEN",
+					"protocol": "https",
+					"host": [
+						"graph",
+						"facebook",
+						"com"
+					],
+					"path": [
+						"v2.6",
+						"me",
+						"messenger_profile"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "YOUR_PAGE_ACCESS_TOKEN",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"get_started\":{\r\n\t\t\"payload\":\"Get Started\"\r\n\t}\r\n}"
+				},
+				"description": "set the Get Started button"
+			},
+			"response": []
+		}
+	]
+}
